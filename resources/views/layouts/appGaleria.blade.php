@@ -14,6 +14,7 @@
     {!!Html::style('font-awesome/css/font-awesome.min.css')!!}
     {!!Html::style('css/animate.css')!!}
     {!!Html::style('css/style.css')!!}
+    {{-- {!!Html::style('css/style1.css')!!} --}}
 
     {!!Html::style('color/default.css')!!}
     <!-- GALERIA -->
