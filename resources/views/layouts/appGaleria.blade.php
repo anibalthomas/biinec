@@ -15,14 +15,12 @@
     {!!Html::style('css/animate.css')!!}
     {!!Html::style('css/style.css')!!}
     {{-- {!!Html::style('css/style1.css')!!} --}}
-
     {!!Html::style('color/default.css')!!}
     <!-- GALERIA -->
-    <link rel="stylesheet" href="css/main2.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <link rel="stylesheet" href="css/slit-slider.css">
-  <link rel="stylesheet" href="css/animate2.css">
-  <script src="js/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" href="css/main2.css">
+    <script src="js/modernizr-2.6.2.min.js"></script>
     {{-- {!!Html::style('css/normalize.css')!!}
     {!!Html::style('css/framework.css')!!}
     {!!Html::style('css/style3.css')!!}
@@ -145,22 +143,15 @@
       <!-- Custom Theme JavaScript -->
     {!!Html::script('js/custom2.js')!!}
     {!!Html::script('contactform/contactform.js')!!}
-	 		<!--   GALERIA -->
 
 
-
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/jquery.singlePageNav.min.js"></script>
-    <script src="js/jquery.fancybox.pack.js"></script>
-
-    <script src="js/jquery.easing.min.js"></script>
-    <!-- Fullscreen slider -->
-    <script src="js/jquery.slitslider.js"></script>
-    <script src="js/jquery.ba-cond.min.js"></script>
-<!-- onscroll animation -->
-    <script src="js/wow.min.js"></script>
-<!-- Custom Functions -->
-    <script src="js/main.js"></script>
+      <!--   GALERIA -->
+      <script src="js/jquery-1.11.1.min.js"></script>
+      <script src="js/jquery.singlePageNav.min.js"></script>
+      <script src="js/jquery.fancybox.pack.js"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/jquery.slitslider.js"></script>
+      <script src="js/main2.js"></script>
 
 
 </body>

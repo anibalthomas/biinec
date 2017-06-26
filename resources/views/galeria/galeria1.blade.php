@@ -9,7 +9,8 @@
 		<div class="row">
 
 			<div class="sec-title text-center wow animated fadeInDown">
-				<h2>FEATURED PROJECTS</h2>
+				<br><br><br>
+				<h2>Imágenes</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 
