@@ -1,22 +1,15 @@
 @extends('layouts.app')
+@section('header')
+  <h1>
+    Perfil de Usuario
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-home"></i> home</a></li>
 
+  </ol>
+@endsection
 @section('content')
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Perfil de Usuario
-      <small></small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-home"></i> home</a></li>
-
-    </ol>
-  </section>
-
-  <!-- Main content -->
-  <section class="content">
-
 
     <div class="container">
           <div class="row">
@@ -80,10 +73,4 @@
             </div>
           </div>
         </div>
-
-
-  </section>
-  <!-- /.content -->
-</div>
-
 @endsection

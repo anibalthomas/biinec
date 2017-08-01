@@ -1,24 +1,17 @@
 @extends('layouts.app')
-
+@section('header')
+  <h1>
+    Editar Usuario
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href=""><i class="fa fa-users"></i>Usuarios</a></li>
+    <li class="active">Tabla de Usuarios</li>
+  </ol>
+@endsection
 @section('content')
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-  <section class="content-header">
-    <h1>
-      Editar Usuario
-      <small></small>
-    </h1>
 
 
-
-    <ol class="breadcrumb">
-      <li><a href=""><i class="fa fa-users"></i>Usuarios</a></li>
-      <li class="active">Tabla de Usuarios</li>
-    </ol>
-  </section>
-
-  <!-- Main content -->
-  <section class="content">
 
         <form method="POST"
         action="{{ route('usuarios.update', $user->id) }}"
@@ -29,10 +22,9 @@
           @include('users.__form')
             <input class="btn btn-primary" type="submit" value="Editar">
         </form>
-<a href="{{ route('password')}}">Cambiar mi password</a>
-  </section>
-  <!-- /.content -->
-</div>
+        <a href="{{ route('password')}}">Cambiar mi password</a>
+
+
 
   {{-- <script src="/js/app.js"></script> --}}
   @include('partials.__messages')

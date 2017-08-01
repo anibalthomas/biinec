@@ -15,16 +15,15 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-
-
-
-            // $table->String('nespecie');
-            // $table->String('ncientifico');
-            // $table->String('area');
-            // $table->String('lugar');
-            // $table->String('ubicacion');
-            // $table->String('categoria');
-            // $table->string('imagen');
+            $table->string('title');
+            $table->string('ncientifico')->nullable();
+            $table->string('url');
+            $table->mediumText('excerpt')->nullable();
+            $table->timestamp('published_at')->nullable();
+            $table->unsignedInteger('category_id')->nullable();
+            $table->unsignedInteger('area_id')->nullable();
+            $table->unsignedInteger('lugar_id')->nullable();
+            $table->String('ubicacion')->nullable();
             $table->timestamps();
         });
     }

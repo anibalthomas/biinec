@@ -30,11 +30,6 @@ class HomeController extends Controller
     public function index() {
         return view('index');
     }
-    public function blog() {
-        return view('blog');
-    }
-    public function imagen()
-    {
-            return view('imagenes.create');
-    }
+
+
 }

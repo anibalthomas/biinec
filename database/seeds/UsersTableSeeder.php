@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
+      User::truncate();
       DB::table('users')->insert([
         'name' => 'Anibal',
         'email' => 'jovomilla@gmail.com',
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
       'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
       ]);
 
-      factory(App\User::class, 500)->create();
+      factory(App\User::class, 30)->create();
 
 
           // factory(App\User::class)->create([
