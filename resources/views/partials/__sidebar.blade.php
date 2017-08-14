@@ -70,7 +70,7 @@
     ><a href="
     {{ route('admin.posts.index')}}
     "><i class="fa fa-eye"></i>
-    Ver todos los pots</a>
+    Ver todos los posts</a>
     </li>
     <li><a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa
      fa-pencil"></i>Crear un post</a>

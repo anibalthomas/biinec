@@ -1,33 +1,17 @@
+
 var marker;          //variable del marcador
 var coords = {};    //coordenadas obtenidas con la geolocalización
 
 //Funcion principal
-initMap = function ()
-{
-
-    //usamos la API para geolocalizar el usuario
-        navigator.geolocation.getCurrentPosition(
-          function (position){
-            coords =  {
-              lng: position.coords.longitude,
-              lat: position.coords.latitude
-            };
-            setMapa(coords);  //pasamos las coordenadas al metodo para crear el mapa
 
 
-          },function(error){console.log(error);});
-
-}
-
-
-
-function setMapa (coords)
+function initMap()
 {
       //Se crea una nueva instancia del objeto mapa
       var map = new google.maps.Map(document.getElementById('map'),
       {
         zoom: 13,
-        center:new google.maps.LatLng(coords.lat,coords.lng),
+        center:new google.maps.LatLng(19.513385214765133,-96.94360024550781),
 
       });
 
@@ -38,9 +22,13 @@ function setMapa (coords)
         map: map,
         draggable: true,
         animation: google.maps.Animation.DROP,
-        position: new google.maps.LatLng(coords.lat,coords.lng),
+        content: 'ddsdsd',
+        position: new google.maps.LatLng(19.513385214765133,-96.94360024550781),
 
       });
+      var popup = new google.maps.InfoWindow({
+        content: 'Arrastra el marcador para ubicar la cordenada en el formulario'});
+        popup.open(map, marker);
       //agregamos un evento al marcador junto con la funcion callback al igual que el evento dragend que indica
       //cuando el usuario a soltado el marcador
       marker.addListener('click', toggleBounce);
@@ -60,3 +48,7 @@ function toggleBounce() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }
 }
+$('#myModal').on('shown.bs.modal', function () {
+    initMap();
+});
+// Carga de la libreria de google maps

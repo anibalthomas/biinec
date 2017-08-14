@@ -11,7 +11,8 @@ class CategoriesController extends Controller
     {
 
         return view('galeria.galeria1', [
-            'title' => "Publicaciones de la categoria '{$category->name}'",
+            // 'title' => "Publicaciones de la categoria '{$category->name}'",
+            'title' => $category->name,
             'posts' => $category->posts()->paginate(6)
         ]);
       }

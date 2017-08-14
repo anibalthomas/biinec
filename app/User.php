@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\ResetPasswordNotification;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -33,6 +34,11 @@ class User extends Authenticatable
     }
 
 
+    public function area()
+    {
+      return $this->belongsTo(Area::class);
+      // 1 a muchos
+    }
 
     public function roles()
     {
@@ -58,5 +64,21 @@ class User extends Authenticatable
       {
           return $this->hasRoles(['admin']);
       }
+
+
+
+
+
+      /**
+       * Send the password reset notification.
+       *
+       * @param  string  $token
+       * @return void
+       */
+      public function sendPasswordResetNotification($token)
+      {
+          $this->notify(new ResetPasswordNotification($token));
+      }
+
 
 }

@@ -34,9 +34,7 @@
               <td>{{ $post->title }}</td>
               <td>{{ $post->excerpt }}</td>
               <td>
-                <a href="
-                {{-- {{ route('posts.show', $post)}} --}}
-                "
+                <a href="{{ route('posts.show', $post)}}"
                    class="btn btn-xs btn-default"
                    target="_blank"
                    ><i class="fa fa-eye"></i></a>

@@ -106,14 +106,14 @@
                               value="{{ old('ubicacion', $post->ubicacion) }}"
                               placeholder="coordenadas"readonly/>
 
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="initMap()">Mapa</button>
+                      <button type="button"
+                              class="btn btn-primary"
+                              data-toggle="modal"
+                              data-target="#myModal"
+                              {{-- onclick="initMap()" --}}
+                              >Mapa</button>
                       {!! $errors->first('ubicacion', '<span class="help-block">:message</span>')!!}
                     </div>
-
-
-
-
-
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" role="dialog">
                       <div class="modal-dialog">
@@ -124,9 +124,8 @@
 
                             <h4 class="modal-title">Ubicación</h4>
                           </div>
-                          <div id="map" class="panel body">
-
-                          </div>
+                          
+                          <div id="map" class="panel body"></div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                           </div>
@@ -220,7 +219,7 @@
 @push('scripts')
       {{-- mapa --}}
   <script src="/mapa/localiza2.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVZqDBRMRB0pIc6ygIY-a5-vwB1MoEu7A"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVZqDBRMRB0pIc6ygIY-a5-vwB1MoEu7A&sensor=true"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
