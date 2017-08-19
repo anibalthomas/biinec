@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                {{-- <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="email" class="col-md-4 control-label">Dirección de correo electrónico</label>
 
                                     <div class="col-md-6">
@@ -40,14 +40,23 @@
                                             </span>
                                         @endif
                                     </div>
+                                </div> --}}
+
+                                <div class="form-group">
+                                {{-- {{ $errors->has('email') ? ' has-error' : '' }} --}}
+                                    <label for="text" class="col-md-4 control-label">Dirección de correo electrónico</label>
+                                  <div class="input-group col-md-6" style="padding-left: 13px;">
+                                    <input type="text" class="form-control" aria-describedby="basic-addon2">
+                                    <span class="input-group-addon" id="basic-addon2">@inecol.mx</span>
+                                    {{-- @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif --}}
+                                  </div>
                                 </div>
 
-                                              {{-- <div class="input-group">
-                                                  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                                                  <span class="input-group-addon" id="basic-addon2">@inecol.mx</span>
-                                                </div> --}}
-
-                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                                {{-- <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                     <label for="password" class="col-md-4 control-label">Contraseña</label>
 
                                     <div class="col-md-6">
@@ -67,7 +76,7 @@
                                     <div class="col-md-6">
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
