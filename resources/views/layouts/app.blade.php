@@ -62,10 +62,9 @@ window.Laravel = {!! json_encode([
 </div>
           <footer class="main-footer">
             <div class="pull-right hidden-xs">
-              Anything you want
+              <a href="http://www.inecol.mx">inecol.mx</a>
             </div>
-            <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
-          </footer>
+            <strong>Instituto de Ecología, A.C.</strong>  </footer>
 </div>
 
 <script src="/adminlte/jquery/dist/jquery.min.js"></script>

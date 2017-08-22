@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
       User::truncate();
-      // DB::table('assigned_roles')->truncate();
+      DB::table('assigned_roles')->truncate();
       $user = new User;
       $user->name = "Anibal";
       $user->email = "jovomilla@gmail.com";
@@ -23,11 +23,11 @@ class UsersTableSeeder extends Seeder
       $user->created_at = Carbon::now()->format('Y-m-d H:i:s');
       $user->save();
 
-      // DB::table('assigned_roles')->insert([
-      //       'id' => '1',
-      //       'user_id' => '1',
-      //       'role_id' => '1',
-      // ]);
+      DB::table('assigned_roles')->insert([
+            'id' => '1',
+            'user_id' => '1',
+            'role_id' => '1',
+      ]);
 
       // DB::table('users')->insert([
       //   'name' => 'Anibal',
