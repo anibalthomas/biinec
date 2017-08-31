@@ -17,11 +17,11 @@ class PhotosController extends Controller
             'photo' => 'required|image'
           ]);
 
-          $photo = request()->file('photo')->store('public');
+
 
 
           Photo::create([
-              'url' => Storage::url($photo),
+              'url' => request()->file('photo')->store('posts','public'),
               'post_id' => $post->id
           ]);
     }
@@ -34,6 +34,7 @@ class PhotosController extends Controller
 
        Storage::delete($photoPath);
 
-       return back()->with('flash', 'Foto eliminada');
+
+       return back()->with('info', 'Foto eliminada');
     }
 }
