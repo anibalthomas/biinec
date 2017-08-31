@@ -22,7 +22,8 @@
     <div class="row">
       <div class="col-md-6">
 <br>
-        <figure><img src="{{ $post->photos->first()->url }}" class="img-responsive" alt=""></figure>
+        {{-- <figure><img src="{{ $post->photos->first()->url }}" class="img-responsive" alt=""></figure> --}}
+        <figure><img src="/storage/{{ $post->photos->first()->url }}" class="img-responsive" alt=""></figure>
       </div>
         <div class="col-md-6">
           <h1 style="margin: 0px 0 10px;">{{ $post->title }}</h1>

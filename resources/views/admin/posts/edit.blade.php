@@ -25,7 +25,8 @@
 
                       <div class="col-md-2">
                         <button class="btn btn-danger btn-xs" style="position: absolute"><i class="fa fa-remove"></i></button>
-                        <img class="img-responsive" src="{{ url($photo->url)}}">
+                        {{-- <img class="img-responsive" src="{{ url($photo->url)}}"> --}}
+                          <img class="img-responsive" src="/storage/{{ $photo->url}}">
                       </div>
                     </form>
 
@@ -124,7 +125,7 @@
 
                             <h4 class="modal-title">Ubicación</h4>
                           </div>
-                          
+
                           <div id="map" class="panel body"></div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

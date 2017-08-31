@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('header')
   <h1>
-    Page Header
-    <small>Optional description</small>
+    Envio de Mensajes
+    {{-- <small>Optional description</small> --}}
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-home"></i> home</a></li>
+    <li><a href="#"><i class="fa fa-home"></i> Envío de mensajes</a></li>
 
   </ol>
 
