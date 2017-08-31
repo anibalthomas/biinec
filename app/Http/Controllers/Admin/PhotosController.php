@@ -17,7 +17,7 @@ class PhotosController extends Controller
             'photo' => 'required|image'
           ]);
 
-          return request()->file('photo')->store('public');
+          $photo = request()->file('photo')->store('public');
 
 
           Photo::create([
