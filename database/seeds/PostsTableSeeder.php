@@ -16,6 +16,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+          Storage::disk('public')->deleteDirectory('posts');
           Post::truncate();
           Tag::truncate();
 
