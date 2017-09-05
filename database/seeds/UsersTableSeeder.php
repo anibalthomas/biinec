@@ -21,7 +21,9 @@ class UsersTableSeeder extends Seeder
       $user->avatar = "anibal.jpeg";
       $user->password = "123456";
       $user->created_at = Carbon::now()->format('Y-m-d H:i:s');
+      $user->active = true;
       $user->save();
+
 
       DB::table('assigned_roles')->insert([
             'id' => '1',
