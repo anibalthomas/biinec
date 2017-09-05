@@ -47,4 +47,5 @@
 
           </div>
         </div>
+        @include('partials.__messages')
 @endsection

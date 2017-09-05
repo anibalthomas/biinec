@@ -6,6 +6,8 @@ Route::get('api/users', function(){
   return Datatables::eloquent(App\User::query())->make(true);
 });
 
+Route::get('activate/{token}','ActivationTokenController@activate')->name('activation');
+
 Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('galeria/{post}', 'PostsController@show')->name('posts.show');

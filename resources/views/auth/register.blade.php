@@ -18,7 +18,7 @@
                                     <label for="name" class="col-md-4 control-label">Nombre</label>
 
                                     <div class="col-md-6">
-                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"  autofocus>
 
                                         @if ($errors->has('name'))
                                             <span class="help-block">
@@ -28,11 +28,11 @@
                                     </div>
                                 </div>
 
-                                {{-- <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="email" class="col-md-4 control-label">Dirección de correo electrónico</label>
 
                                     <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" >
 
                                         @if ($errors->has('email'))
                                             <span class="help-block">
@@ -40,27 +40,15 @@
                                             </span>
                                         @endif
                                     </div>
-                                </div> --}}
-
-                                <div class="form-group">
-                                {{-- {{ $errors->has('email') ? ' has-error' : '' }} --}}
-                                    <label for="text" class="col-md-4 control-label">Dirección de correo electrónico</label>
-                                  <div class="input-group col-md-6" style="padding-left: 13px;">
-                                    <input type="text" class="form-control" aria-describedby="basic-addon2">
-                                    <span class="input-group-addon" id="basic-addon2">@inecol.mx</span>
-                                    {{-- @if ($errors->has('email'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif --}}
-                                  </div>
                                 </div>
 
-                                {{-- <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+
+
+                                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                     <label for="password" class="col-md-4 control-label">Contraseña</label>
 
                                     <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control" name="password" required>
+                                        <input id="password" type="password" class="form-control" name="password" >
 
                                         @if ($errors->has('password'))
                                             <span class="help-block">
@@ -74,9 +62,9 @@
                                     <label for="password-confirm" class="col-md-4 control-label">Confirmar contraseña</label>
 
                                     <div class="col-md-6">
-                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" >
                                     </div>
-                                </div> --}}
+                                </div>
 
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">

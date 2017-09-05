@@ -73,5 +73,6 @@ window.Laravel = {!! json_encode([
 
 @stack('scripts')
 @include('admin.posts.create')
+
 </body>
 </html>

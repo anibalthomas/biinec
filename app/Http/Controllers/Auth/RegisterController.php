@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Roles;
+use App\ActivationToken;
+use Illuminate\Http\Request;
+use App\Rules\ValidEmailDomain;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -50,7 +53,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => ['required','string','email','max:255','unique:users',
+            new ValidEmailDomain],
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -66,8 +70,16 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => $data['password'],
-        ]);
+            'password' => bcrypt($data['password']),
+        ])->generateToken();
 
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $this->guard()->logout();
+
+        return redirect('login')->withInfo('Te hemos enviado un link de
+        activación a tu correo');
     }
 }

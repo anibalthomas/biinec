@@ -79,6 +79,11 @@
             </div>
         </nav>
 
+        @if (session()->has('info'))
+          <div class="container">
+              <div class="alert alert-info">{{ session('info')}}</div>
+          </div>
+        @endif
 
         @yield('content')
 

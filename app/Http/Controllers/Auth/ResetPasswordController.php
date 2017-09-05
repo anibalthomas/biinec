@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Str;
 
 
 class ResetPasswordController extends Controller
@@ -38,7 +39,7 @@ class ResetPasswordController extends Controller
         $this->middleware('guest');
     }
 
-    protected function resetPassword($user, $password)
+    public function resetPassword($user, $password)
     {
         $user->forceFill([
             'password' => $password,
