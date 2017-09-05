@@ -53,6 +53,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+            'apellidop' => 'required|string|max:255',
+            'apellidom' => 'required|string|max:255',
             'email' => ['required','string','email','max:255','unique:users',
             new ValidEmailDomain],
             'password' => 'required|string|min:6|confirmed',
@@ -69,6 +71,8 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'apellidop' => $data['apellidop'],
+            'apellidom' => $data['apellidom'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ])->generateToken();

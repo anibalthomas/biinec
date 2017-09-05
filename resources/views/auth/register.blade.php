@@ -28,6 +28,34 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group{{ $errors->has('apellidop') ? ' has-error' : '' }}">
+                                    <label for="apellidop" class="col-md-4 control-label">Primer Apellido</label>
+
+                                    <div class="col-md-6">
+                                        <input id="apellidop" type="text" class="form-control" name="apellidop" value="{{ old('apellidop') }}"  autofocus>
+
+                                        @if ($errors->has('apellidop'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('apellidop') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('apellidom') ? ' has-error' : '' }}">
+                                    <label for="apellidom" class="col-md-4 control-label">Segundo Apellido</label>
+
+                                    <div class="col-md-6">
+                                        <input id="apellidom" type="text" class="form-control" name="apellidom" value="{{ old('apellidom') }}"  autofocus>
+
+                                        @if ($errors->has('apellidom'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('apellidom') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="email" class="col-md-4 control-label">Dirección de correo electrónico</label>
 

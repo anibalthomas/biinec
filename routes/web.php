@@ -23,7 +23,7 @@ Route::patch('notificaciones/{id}','NotificationsController@read')->name('notifi
 Route::delete('notificaciones/{id}','NotificationsController@destroy')->name('notifications.destroy');
 
 Route::resource('usuarios', 'UsersController');
-Route::get('registrar', 'UsersController@create')->name('usuarios.create');
+// Route::get('registrar', 'UsersController@create')->name('usuarios.create');
 
 Route::get('password', ['as' => 'password', 'uses'=> 'UsersController@password']);
 Route::post('updatepassword', 'UsersController@updatepassword')->name('updatepassword');

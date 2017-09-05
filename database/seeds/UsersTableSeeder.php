@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
       DB::table('assigned_roles')->truncate();
       $user = new User;
       $user->name = "Anibal";
+      $user->apellidop = "Sánchez";
       $user->email = "jovomilla@gmail.com";
       $user->avatar = "anibal.jpeg";
       $user->password = "123456";
@@ -45,7 +46,9 @@ class UsersTableSeeder extends Seeder
       // 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
       // ]);
       //
-      factory(App\User::class, 30)->create();
+
+
+      // factory(App\User::class, 30)->create();
 
 
 
