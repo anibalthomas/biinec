@@ -18,6 +18,8 @@ class UsersTableSeeder extends Seeder
       $user = new User;
       $user->name = "Anibal";
       $user->apellidop = "Sánchez";
+      $user->apellidom = "Mújica";
+      $user->genero = "1";
       $user->email = "jovomilla@gmail.com";
       $user->avatar = "anibal.jpeg";
       $user->password = "123456";

@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Roles;
+use App\Area;
+use App\State;
+use App\Town;
+use Carbon\Carbon;
 use App\ActivationToken;
 use Illuminate\Http\Request;
 use App\Rules\ValidEmailDomain;
@@ -43,6 +47,24 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    // public function selectAjax(Request $request)
+    // {
+    // 	if($request->ajax()){
+    // 		$towns = DB::table('towns')->where('state_id',$request->state_id)->pluck("name","id")->all();
+    // 		$data = view('ajax-select',compact('towns'))->render();
+    // 		return response()->json(['options'=>$data]);
+    // 	}
+    // }
+
+   public function showRegistrationForm()
+   {
+     $areas = Area::all();
+    //  $states = State::pluck('name','id');
+     $states = State::all();
+
+       return view('auth.register', compact('areas','states'));
+   }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -55,6 +77,12 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'apellidop' => 'required|string|max:255',
             'apellidom' => 'required|string|max:255',
+            'area_id' => 'required',
+            'genero' => 'required',
+            'fechan' => 'required',
+            'estado_id' => 'required',
+            'ciudad_id' => 'required',
+            // 'url' => 'required',
             'email' => ['required','string','email','max:255','unique:users',
             new ValidEmailDomain],
             'password' => 'required|string|min:6|confirmed',
@@ -73,8 +101,14 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'apellidop' => $data['apellidop'],
             'apellidom' => $data['apellidom'],
+            'area_id' => $data['area_id'],
+            'genero' => $data['genero'],
+            'fechan' => Carbon::parse($data['fechan']),
+            'estado_id' => $data['estado_id'],
+            'ciudad_id' => $data['ciudad_id'],
+            'url' => $data['url'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => $data['password'],
         ])->generateToken();
 
     }

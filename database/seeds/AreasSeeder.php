@@ -15,7 +15,7 @@ class AreasSeeder extends Seeder
         Area::truncate();
 
         $area = new Area;
-        $area->name = "Area 1";
+        $area->name = "Enlace con la Sociedad";
         $area->save();
 
         $area = new Area;

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\DatesTranslator;
 use App\ActivationToken;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Notifications\Notifiable;
@@ -18,7 +19,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'active'
+        'name', 'email', 'password', 'avatar',
+        'active', 'apellidop', 'apellidom',
+         'area_id', 'genero','fechan','ciudad_id',
+         'estado_id','url'
+
     ];
 
     /**
@@ -55,7 +60,7 @@ class User extends Authenticatable
         return $this;
     }
 
-
+      // Encriptacion al campo password
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
@@ -65,6 +70,16 @@ class User extends Authenticatable
     public function area()
     {
         return $this->belongsTo(Area::class);
+        // 1 a muchos
+    }
+    public function estado()
+    {
+        return $this->belongsTo(State::class);
+        // 1 a muchos
+    }
+    public function ciudad()
+    {
+        return $this->belongsTo(Town::class);
         // 1 a muchos
     }
 

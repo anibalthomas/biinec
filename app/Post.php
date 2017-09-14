@@ -2,11 +2,14 @@
 
 namespace App;
 
+use App\DatesTranslator;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+        use DatesTranslator;
+
     protected $guarded = [];
     protected $dates = ['published_at'];
 

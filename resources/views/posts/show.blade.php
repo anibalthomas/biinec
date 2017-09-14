@@ -47,7 +47,7 @@
             </tr>
             <tr>
               <td>Fecha de publicación</td>
-              <td>{{ $post->published_at->format('M d') }}</td>
+              <td>{{ $post->published_at->toFormattedDateString() }}</td>
             </tr>
             <tr>
               <td>Categoría</td>

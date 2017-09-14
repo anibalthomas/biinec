@@ -15,7 +15,10 @@ trait DatesTranslator
   {
     return new Date($date);
   }
-
+  public function getPublishedAtAttribute($date)
+  {
+    return new Date($date);
+  }
 
 }
 

@@ -1,10 +1,24 @@
 <?php
 
+use Illuminate\Support\Facades\Input;
+use App\Town;
+use Illuminate\Support\Facades\Response;
 
 
 Route::get('api/users', function(){
   return Datatables::eloquent(App\User::query())->make(true);
 });
+
+Route::get('/ajax-town',function(){
+      $sta_id = Input::get('sta_id');
+    $towns = Town::where('state_id', '=', $sta_id)->get();
+    return Response::json($towns);
+});
+// Route::post('select-ajax', ['as'=>'select-ajax','uses'=>'RegisterController@selectAjax']);
+// Route::get('GetCountries','StateController@GetCountries');
+// Route::get('GetStates/{id}','StateController@GetStates');
+
+
 
 Route::get('activate/{token}','ActivationTokenController@activate')->name('activation');
 

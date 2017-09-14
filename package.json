@@ -19,6 +19,8 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
-    "toastr": "^2.1.2"
+    "select2": "^4.0.3",
+    "toastr": "^2.1.2",
+    "vue-axios": "^2.0.2"
   }
 }

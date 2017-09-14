@@ -21,9 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('genero')->nullable();
             $table->string('email')->unique();
             $table->unsignedInteger('area_id')->nullable();
-            $table->date('fecha')->nullable();
-            $table->string('ciudad')->nullable();
-            $table->string('URL')->nullable();
+            $table->timestamp('fechan')->nullable();
+            $table->unsignedInteger('estado_id')->nullable();
+            $table->unsignedInteger('ciudad_id')->nullable();
+            $table->string('url')->nullable();
             $table->string('avatar')->default('default.png');
             $table->string('password')->nullable();
             $table->boolean('active')->default(false);
