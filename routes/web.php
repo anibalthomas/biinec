@@ -4,6 +4,18 @@ use Illuminate\Support\Facades\Input;
 use App\Town;
 use Illuminate\Support\Facades\Response;
 
+// sweetalert
+ // Route::get('redirect', function(){
+  //  alert()->success('Success Message', 'Optional Title');
+  //  return redirect('/')
+  //  ->with('success', 'Success Holi message')
+ //   ;
+ // });
+//  <link rel="stylesheet" href="/sweetalert/sweetalert.css">
+//
+// <script src="/sweetalert/sweetalert.min.js"></script>
+//  @include('sweet::alert')
+
 
 Route::get('api/users', function(){
   return Datatables::eloquent(App\User::query())->make(true);
@@ -66,6 +78,7 @@ function(){
   Route::post('posts', 'PostsController@store')->name('admin.posts.store');
   Route::get('posts/{post}', 'PostsController@edit')->name('admin.posts.edit');
   Route::put('posts/{post}', 'PostsController@update')->name('admin.posts.update');
+  Route::delete('posts/{post}', 'PostsController@destroy')->name('admin.posts.destroy');
 
   Route::post('posts/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.store');
   Route::delete('photos/{photo}', 'PhotosController@destroy')->name('admin.photos.destroy');

@@ -48,7 +48,7 @@ function toggleBounce() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }
 }
-$('#myModal').on('shown.bs.modal', function () {
+$('#mapa').on('shown.bs.modal', function () {
     initMap();
 });
 // Carga de la libreria de google maps

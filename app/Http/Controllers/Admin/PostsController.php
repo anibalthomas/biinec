@@ -29,7 +29,7 @@ class PostsController extends Controller
 
         public function store(Request $request)
         {
-          $this->validate($request, ['title' => 'required']);
+          $this->validate($request, ['title' => 'required|min:3|unique:posts']);
 
           $post = Post::create($request->only('title'));
 
@@ -71,6 +71,15 @@ public function update(Post $post, Request $request)
   $post->ubicacion = $request->get('ubicacion');
   $post->save();
   $post->tags()->sync($request->get('tags'));
-  return redirect()->route('admin.posts.edit', $post)->with('info','Tu publicación ha sido guardada');              
+  return redirect()->route('admin.posts.edit', $post)->with('info','La publicación ha sido guardada');
 }
+
+public function destroy(Post $post)
+{
+
+  $post->delete();
+
+  return redirect()->route('admin.posts.index', $post)->with('info','La publicación ha sido eliminada');
+}
+
 }

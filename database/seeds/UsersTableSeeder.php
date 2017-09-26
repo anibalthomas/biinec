@@ -21,7 +21,30 @@ class UsersTableSeeder extends Seeder
       $user->apellidom = "Mújica";
       $user->genero = "1";
       $user->email = "jovomilla@gmail.com";
+      $user->area_id = "1";
+      $user->fechan = "2017-09-13 00:00:00";
+      $user->estado_id = "1";
+      $user->ciudad_id = "1";
+      $user->url = "www.dooded.com";
       $user->avatar = "anibal.jpeg";
+      $user->password = "123456";
+      $user->created_at = Carbon::now()->format('Y-m-d H:i:s');
+      $user->active = true;
+      $user->save();
+
+      DB::table('assigned_roles')->truncate();
+      $user = new User;
+      $user->name = "Tomas";
+      $user->apellidop = "Sánchez";
+      $user->apellidom = "Mújica";
+      $user->genero = "1";
+      $user->email = "tomas@gmail.com";
+      $user->area_id = "1";
+      $user->fechan = "2017-09-13 00:00:00";
+      $user->estado_id = "1";
+      $user->ciudad_id = "1";
+      $user->url = "www.tomas.com";
+      // $user->avatar = "anibal.jpeg";
       $user->password = "123456";
       $user->created_at = Carbon::now()->format('Y-m-d H:i:s');
       $user->active = true;
@@ -31,6 +54,12 @@ class UsersTableSeeder extends Seeder
       DB::table('assigned_roles')->insert([
             'id' => '1',
             'user_id' => '1',
+            'role_id' => '1',
+      ]);
+
+      DB::table('assigned_roles')->insert([
+            'id' => '2',
+            'user_id' => '2',
             'role_id' => '1',
       ]);
 
@@ -50,7 +79,7 @@ class UsersTableSeeder extends Seeder
       //
 
 
-      // factory(App\User::class, 30)->create();
+      factory(App\User::class, 30)->create();
 
 
 

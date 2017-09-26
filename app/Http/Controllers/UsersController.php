@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Role;
 use App\User;
+use App\Area;
+use App\State;
+use App\Town;
 use Hash;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -87,8 +91,11 @@ class UsersController extends Controller
         $this->authorize($user);
 
         $roles = Role::pluck('display_name', 'id');
+        $areas = Area::all();
+        $states = State::all();
+        $towns = Town::all();
 
-        return view('users.edit', compact('user', 'roles'));
+        return view('users.edit', compact('user','roles','areas','states','towns'));
     }
 
     /**
@@ -110,7 +117,20 @@ class UsersController extends Controller
           $user->avatar = $request->file('avatar')->store('public');  // el nombre dentro de store, creara una carpeta con el nombre dentro de storage
         }
 
-        $user->update($request->only('name', 'email'));
+        $user->update($request->only(
+          'name',
+          'apellidop',
+          'apellidom',
+          'email',
+          'area_id',
+          'genero',
+          'estado_id',
+          'ciudad_id',
+          'url'
+
+        ));
+        $user->fechan = $request->has('fechan') ? Carbon::parse($request->get('fechan')) : null;
+        $user->save();
 
         $user->roles()->sync($request->roles);
 
@@ -123,11 +143,14 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $user = User::findOrFail($id);
-        $this->authorize($user);
-        $user->delete();
+     public function destroy($id)
+     {
+         $user = User::findOrFail($id);
+
+        //  $this->authorize($user); ----------------problema aquí
+
+         $user->delete();
+
         return back()->with('warning','Usuario Eliminado');
 
     }
@@ -140,41 +163,7 @@ class UsersController extends Controller
 
 
 
-      public function updatePassword(Request $request){
 
-
-
-          $rules = [
-              'mypassword' => 'required',
-              'password' => 'required|confirmed|min:6|max:18',
-          ];
-
-          $messages = [
-              'mypassword.required' => 'El campo es requerido',
-              'password.required' => 'El campo es requerido',
-              'password.confirmed' => 'Las contraseñas no coinciden',
-              'password.min' => 'El mínimo permitido son 6 caracteres',
-              'password.max' => 'El máximo permitido son 18 caracteres',
-          ];
-
-          $validator = Validator::make($request->all(), $rules, $messages);
-          if ($validator->fails()){
-              return back()->withErrors($validator);
-          }
-          else{
-              if (Hash::check($request->mypassword, Auth::user()->password)){
-                  $user = new User;
-                  $user->where('email', '=', Auth::user()->email)
-                       ->update(['password' => bcrypt($request->password)]);
-                  return back()->with('info', 'Password cambiado con éxito');
-
-              }
-              else
-              {
-                  return back()->with('warning', 'Credenciales incorrectas');
-              }
-          }
-      }
 
 
 

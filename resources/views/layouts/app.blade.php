@@ -71,8 +71,12 @@ window.Laravel = {!! json_encode([
 <script src="/adminlte/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/adminlte/js/app.min.js"></script>
 
+@unless (request()->is('admin/posts/*'))
+  @include('admin.posts.create')
+@endunless
+
 @stack('scripts')
-@include('admin.posts.create')
+
 
 </body>
 </html>

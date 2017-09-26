@@ -21,10 +21,10 @@ class UserPolicy
 
     public function before($user, $ability)
     {
-       if ( $user->isAdmin() )
+        if ( $user->isAdmin() )
         {
-          return true;
-         }
+            return true;
+        }
     }
 
     public function edit(User $authUser, User $user)
@@ -41,5 +41,12 @@ class UserPolicy
     {
         return $authUser->id === $user->id;
     }
+
+
+
+
+
+
+
 
 }

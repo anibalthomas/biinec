@@ -45,7 +45,30 @@
                       action="{{ route('admin.posts.destroy', $post)}}"
                       style="display: inline">
                   {{ csrf_field() }} {{ method_field('DELETE')}}
-                  <button class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>
+                  <button class="btn btn-xs btn-danger"
+
+                    {{-- onclick="return confirm('¿Estás seguro de querer eliminar esta publicación?')" --}}
+
+                    onclick="swal({
+        title: 'Are you sure?',
+        text: 'You will not be able to recover this imaginary file!',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#DD6B55',
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel plx!',
+        closeOnConfirm: false,
+        closeOnCancel: false
+    },
+    function(isConfirm) {
+        if (isConfirm) {
+            swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
+        } else {
+            swal('Cancelled', 'Your imaginary file is safe :)', 'error');
+        }
+    }
+);">
+                    <i class="fa fa-times"></i></button>
                 </form>
 
               </td>
@@ -61,14 +84,55 @@
     <!-- /.box-body -->
   </div>
   <!-- /.box -->
+  @include('partials.__messages')
+@endsection
+
+@section('modal')
+
 @endsection
 
 @push('styles')
+  <link rel="stylesheet" href="/sweetalert/sweetalert.css">
+
   <!-- Datatables -->
  <link rel="stylesheet" href="/adminlte/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
 @endpush
 @push('scripts')
+  <script>
+       document.querySelector('#from1').addEventListener('submit', function(e) {
+           var form = this;
+           e.preventDefault();
+           swal({
+               title: "Are you sure?",
+               text: "You will not be able to recover this imaginary file!",
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonColor: '#DD6B55',
+               confirmButtonText: 'Yes, I am sure!',
+               cancelButtonText: "No, cancel it!",
+               closeOnConfirm: false,
+               closeOnCancel: false
+           },
+           function(isConfirm) {
+               if (isConfirm) {
+                   swal({
+                       title: 'Shortlisted!',
+                       text: 'Candidates are successfully shortlisted!',
+                       type: 'success'
+                   }, function() {
+                       form.submit();
+                   });
+
+               } else {
+                   swal("Cancelled", "Your imaginary file is safe :)", "error");
+               }
+           });
+       });
+
+   </script>
+  <script src="/sweetalert/sweetalert.min.js"></script>
+  @include('sweet::alert')
   <!-- Datatables -->
 
   <script src="/adminlte/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -80,34 +144,5 @@
 
     });
   </script>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <form method="POST" action="{{ route('admin.posts.store') }}">
-      {{ csrf_field() }}
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Agregar el título de tu nueva publicación</h4>
-          </div>
-          <div class="modal-body">
-            <div class="form-group {{ $errors->has('title') ? 'has-error': ''}}">
-                {{-- <label>Título de la publicación</label> --}}
-              <input name="title"
-                     class="form-control"
-                     value="{{ old('title') }}"
-                     placeholder="Ingresa aqui el titulo de la publicación"
-                     required>
-              {!! $errors->first('title', '<span class="help-block">:message</span>')!!}
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button  class="btn btn-primary">Crear publicación</button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
+@include('admin.posts.create')
 @endpush

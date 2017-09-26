@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "select2": "^4.0.3",
+    "sweetalert": "^2.0.3",
     "toastr": "^2.1.2",
     "vue-axios": "^2.0.2"
   }

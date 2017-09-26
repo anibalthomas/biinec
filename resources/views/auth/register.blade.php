@@ -244,13 +244,6 @@
   });
 </script>
 
-{{-- element.defaultValue(townObj) == townObj.id  --}}
-
-{{-- @foreach ($areas as $area)
-      <option value="{{ $area->id }}"
-          '{{ old('ciudad_id') ==' + townObj.id '? 'selected' : ''}}'
-        >{{ $area->name }}</option>
-@endforeach --}}
 
   {{-- <!-- bootstrap datepicker --> --}}
   <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>

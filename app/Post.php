@@ -13,6 +13,17 @@ class Post extends Model
     protected $guarded = [];
     protected $dates = ['published_at'];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($post){
+            $post->tags()->detach();
+            $post->photos->each->delete();
+        });
+    }
+
+
     public function getRouteKeyName()
     {
         return 'url';

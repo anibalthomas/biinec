@@ -14,18 +14,18 @@ class TownsTableSeeder extends Seeder
     {
       DB::table('towns')->delete();
           $town1 = [
-            'Ciudad 1 - Estado 1',
-            'Ciudad 2 - Estado 1',
-            'Ciudad 3 - Estado 1',
-            'Ciudad 4 - Estado 1',
-            'Ciudad 5 - Estado 1',
+            'Xalapa',
+            'Acula',
+            'Acayucan',
+            'Actopan',
+            'Coatepec',
           ];
           $town2 = [
-            'Ciudad 1 - Estado 2',
-            'Ciudad 2 - Estado 2',
-            'Ciudad 3 - Estado 2',
-            'Ciudad 4 - Estado 2',
-            'Ciudad 5 - Estado 2',
+            'El Camarón',
+            'Chahuites',
+            'Cosolapa',
+            'El Rosario',
+            'Lagunas',
           ];
           foreach ($town1 as $key => $value) {
             $town = new town();

@@ -13,7 +13,7 @@ class StatesTableSeeder extends Seeder
     public function run()
     {
         DB::table('states')->delete();
-        $DataCountries = ['Estado 1','Estado 2'];
+        $DataCountries = ['Veracruz','Oaxaca'];
         foreach ($DataCountries as $key => $value) {
             $States = new state();
             $States->name = $value;
