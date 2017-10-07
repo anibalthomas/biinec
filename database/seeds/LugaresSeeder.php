@@ -15,19 +15,39 @@ class LugaresSeeder extends Seeder
           Lugar::truncate();
 
           $lugar = new Lugar;
-          $lugar->name = "Lugar 1";
+          $lugar->name = "Jardín Botánico Clavijero";
           $lugar->save();
 
           $lugar = new Lugar;
-          $lugar->name = "Lugar 2";
+          $lugar->name = "Santuario del Bosque de Niebla";
           $lugar->save();
 
           $lugar = new Lugar;
-          $lugar->name = "Lugar 3";
+          $lugar->name = "CAMPUS I";
           $lugar->save();
 
           $lugar = new Lugar;
-          $lugar->name = "Lugar 4";
+          $lugar->name = "CAMPUS II";
+          $lugar->save();
+
+          $lugar = new Lugar;
+          $lugar->name = "CAMPUS III Clúster BioMimic®";
+          $lugar->save();
+
+          $lugar = new Lugar;
+          $lugar->name = "Centro Regional del Bajío";
+          $lugar->save();
+
+          $lugar = new Lugar;
+          $lugar->name = "Centro de Investigaciones Costeras (CICOLMA)";
+          $lugar->save();
+
+          $lugar = new Lugar;
+          $lugar->name = "Laboratorio del Desierto Mapimi";
+          $lugar->save();
+
+          $lugar = new Lugar;
+          $lugar->name = "Piedra Herrada, La Michilia";
           $lugar->save();
 
     }

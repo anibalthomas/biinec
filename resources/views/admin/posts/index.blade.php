@@ -32,7 +32,7 @@
             <tr>
               <td>{{ $post->id }}</td>
               <td>{{ $post->title }}</td>
-              <td>{{ $post->excerpt }}</td>
+              <td>{!! $post->excerpt !!}</td>
               <td>
                 <a href="{{ route('posts.show', $post)}}"
                    class="btn btn-xs btn-default"
@@ -47,11 +47,11 @@
                   {{ csrf_field() }} {{ method_field('DELETE')}}
                   <button class="btn btn-xs btn-danger"
 
-                    {{-- onclick="return confirm('¿Estás seguro de querer eliminar esta publicación?')" --}}
+                    onclick="return confirm('¿Estás seguro de querer eliminar esta publicación?')"
 
-                    onclick="swal({
+                    {{-- onclick="swal({
         title: 'Are you sure?',
-        text: 'You will not be able to recover this imaginary file!',
+        text: 'You will not be able to recover this imaginary file!' ,
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#DD6B55',
@@ -67,7 +67,8 @@
             swal('Cancelled', 'Your imaginary file is safe :)', 'error');
         }
     }
-);">
+);" --}}
+>
                     <i class="fa fa-times"></i></button>
                 </form>
 
@@ -92,7 +93,7 @@
 @endsection
 
 @push('styles')
-  <link rel="stylesheet" href="/sweetalert/sweetalert.css">
+  {{-- <link rel="stylesheet" href="/sweetalert/sweetalert.css"> --}}
 
   <!-- Datatables -->
  <link rel="stylesheet" href="/adminlte/datatables.net-bs/css/dataTables.bootstrap.min.css">
@@ -131,8 +132,8 @@
        });
 
    </script>
-  <script src="/sweetalert/sweetalert.min.js"></script>
-  @include('sweet::alert')
+  {{-- <script src="/sweetalert/sweetalert.min.js"></script>
+  @include('sweet::alert') --}}
   <!-- Datatables -->
 
   <script src="/adminlte/datatables.net/js/jquery.dataTables.min.js"></script>

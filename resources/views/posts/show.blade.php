@@ -28,48 +28,93 @@
         <div class="col-md-6">
           <h1 style="margin: 0px 0 10px;">{{ $post->title }}</h1>
 
-          <table>
-            <tr>
-              <td>Nombre Cientifico:</td>
-              <td>({{ $post->ncientifico}})</td>
-            </tr>
-            <tr>
-              <td>Descripción:</td>
-              <td>{{  $post->excerpt}}</td>
-            </tr>
-            <tr>
-              <td>Área o red de Adscripción:</td>
-              <td>{{ $post->area->name }}</td>
-            </tr>
-            <tr>
-              <td>Lugar:</td>
-              <td>{{ $post->lugar->name }}</td>
-            </tr>
-            <tr>
-              <td>Fecha de publicación</td>
-              <td>{{ $post->published_at->toFormattedDateString() }}</td>
-            </tr>
-            <tr>
-              <td>Categoría</td>
-              <td><a href="{{ route('categories.show', $post->category)}}">{{ $post->category->name }}</a></td>
-            </tr>
-            <tr>
-              <td>Etiquetas</td>
-              <td>
-                @foreach($post->tags as $tag)
-                  <span class="tag c-gris text-capitalize"><a href="{{ route('tags.show', $tag)}}">#{{ $tag->name }}</a></span>
-                @endforeach
-              </td>
-            </tr>
-            <tr>
-              <td>Descargar</td>
-              <td><a href="{{$post->photos->first()->url}}" download="{{ $post->title }}"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
-            </tr>
-            <tr>
-              <td>Compartir</td>
-              <td>@include('partials.social-links', ['description' => $post->title])</td>
-            </tr>
-          </table>
+          <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab"  href="#especie">Especie</a></li>
+            <li><a data-toggle="tab"  href="#autor">Autor</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="especie" class="tab-pane fade in active">
+              <table>
+                <tr>
+                  <td>Nombre Cientifico:</td>
+                  <td><em>{{ $post->ncientifico}}<em></td>
+                </tr>
+                <tr>
+                  <td>Descripción:</td>
+
+                  <td style="text-align:justify">
+                    <div style="height:120px;width:auto;overflow:auto;">
+                        {!! $post->excerpt!!}
+                      </div>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>Área o red de Adscripción:</td>
+                  <td>{{ $post->area->name }}</td>
+                </tr>
+                <tr>
+                  <td>Lugar:</td>
+                  <td>{{ $post->lugar->name }}</td>
+                </tr>
+                <tr>
+                  <td>Fecha de publicación</td>
+                  <td>{{ $post->published_at->toFormattedDateString() }}</td>
+                </tr>
+                <tr>
+                  <td>Categoría</td>
+                  <td><a href="{{ route('categories.show', $post->category)}}">{{ $post->category->name }}</a></td>
+                </tr>
+                <tr>
+                  <td>Etiquetas</td>
+                  <td>
+                    @foreach($post->tags as $tag)
+                      <span class="tag c-gris text-capitalize"><a href="{{ route('tags.show', $tag)}}">#{{ $tag->name }}</a></span>
+                    @endforeach
+                  </td>
+                </tr>
+                <tr>
+                  <td>Descargar</td>
+                  <td><a href="/storage/{{$post->photos->first()->url}}" download="{{ $post->title }}"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
+                </tr>
+                <tr>
+                  <td>Compartir</td>
+                  <td>@include('partials.social-links', ['description' => $post->title])</td>
+                </tr>
+              </table>
+            </div>
+
+                          <div id="autor" class="tab-pane fade">
+                            <table>
+                              <tr>
+                                <td>Nombre:</td>
+                                <td>{{ Auth::user()->name }} {{ Auth::user()->apellidop }} {{ Auth::user()->apellidom }}</td>
+                              </tr>
+                              <tr>
+                                <td>Área o red de Adscripción:</td>
+                                <td>{{ Auth::user()->area->name }}</td>
+                              </tr>
+                              <tr>
+                                <td>Ciudad:</td>
+                                <td>{{ Auth::user()->ciudad->name }}, {{ Auth::user()->estado->name }}</td>
+                              </tr>
+                              <tr>
+                                <td>Correo:</td>
+                                <td><a href="mailto:{{ Auth::user()->email }}?subject=feedback">{{ Auth::user()->email }}</a></td>
+                              </tr>
+                              <tr>
+                                <td>URL</td>
+                                <td><a href="#">{{ Auth::user()->url }}</a></td>
+                              </tr>
+
+                            </table>
+                          </div>
+
+          </div>
+
+
+
+
           <br>
 
         </div>

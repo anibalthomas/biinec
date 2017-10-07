@@ -21,9 +21,9 @@ window.Laravel = {!! json_encode([
 ]) !!};
 </script>
 
-    {{-- ////////toastr/////////////////////////////////////////////////////////////// --}}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+{{-- ////////toastr/////////////////////////////////////////////////////////////// --}}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js" ></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 
 </head>
@@ -60,21 +60,20 @@ window.Laravel = {!! json_encode([
       @yield('content')
     </section>
 </div>
-          <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-              <a href="http://www.inecol.mx">inecol.mx</a>
-            </div>
-            <strong>Instituto de Ecología, A.C.</strong>  </footer>
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <a href="http://www.inecol.mx">inecol.mx</a>
+    </div>
+    <strong>Instituto de Ecología, A.C.</strong>
+  </footer>
 </div>
 
 <script src="/adminlte/jquery/dist/jquery.min.js"></script>
 <script src="/adminlte/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/adminlte/js/app.min.js"></script>
-
 @unless (request()->is('admin/posts/*'))
   @include('admin.posts.create')
 @endunless
-
 @stack('scripts')
 
 

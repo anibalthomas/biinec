@@ -13,7 +13,39 @@ class StatesTableSeeder extends Seeder
     public function run()
     {
         DB::table('states')->delete();
-        $DataCountries = ['Veracruz','Oaxaca'];
+        $DataCountries = [
+'Aguascalientes'
+,'Baja California'
+,'Baja California Sur'
+,'Campeche'
+,'Chiapas'
+,'Chihuahua'
+,'Coahuila'
+,'Colima'
+,'CDMX'
+,'Durango'
+,'Estado de México'
+,'Guanajuato'
+,'Guerrero'
+,'Hidalgo'
+,'Jalisco'
+,'MichoacАn'
+,'Morelos'
+,'Nayarit'
+,'Nuevo León'
+,'Oaxaca'
+,'Puebla'
+,'Querétaro'
+,'Quintana Roo'
+,'San Luis Potosí'
+,'Sinaloa'
+,'Sonora'
+,'Tabasco'
+,'Tamaulipas'
+,'Tlaxcala'
+,'Veracruz'
+,'Yucatán'
+,'Zacatecas'];
         foreach ($DataCountries as $key => $value) {
             $States = new state();
             $States->name = $value;

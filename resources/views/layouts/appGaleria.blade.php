@@ -42,9 +42,18 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <div class="responsive">
+                  <a href="http://www.inecol.mx">
+                    <img src="/front/img/logocol.png" style="height: 50px;float: left;margin-right: 9px;" class="responsive" alt="">
+                  </a>
+                  <a class="navbar-brand" href="{{ url('/') }}">
                     <h1>BIINEC</h1>
-                </a>
+                  </a>
+                  <a href="https://www.conacyt.gob.mx/">
+                    <img src="/front/img/conacyt.png" style="height: 27px; margin-top: 11px;" alt="">
+                  </a>
+
+              </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -63,39 +72,27 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-lg-12">
-					<p>&copy;SquadFREE. All rights reserved.</p>
-                    <div class="credits">
-                        <!--
-                            All the links in the footer should remain intact.
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Squadfree
-                        -->
-                        <a href="#">One Page Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                    </div>
+          <p>Carretera Antigua a Coatepec 351 El Haya, Xalapa, Veracruz cp. 91070</p>
+          <p>Tel. +52 (228)8421800</p>
 				</div>
 			</div>
 		</div>
 	</footer>
-  <!-- Core JavaScript Files -->
-    {!!Html::script('/front/js/jquery.min.js')!!}
-    {!!Html::script('/front/js/bootstrap.min.js')!!}
-    {!!Html::script('/front/js/jquery.easing.min.js')!!}
-    {!!Html::script('/front/js/jquery.scrollTo.js')!!}
-    {!!Html::script('/front/js/wow.min.js')!!}
-      <!-- Custom Theme JavaScript -->
-    {!!Html::script('/front/js/custom2.js')!!}
-    {!!Html::script('/front/contactform/contactform.js')!!}
-
-
-      <!--   GALERIA -->
-      <script src="/galeria/js/jquery-1.11.1.min.js"></script>
-      <script src="/galeria/js/jquery.singlePageNav.min.js"></script>
-      <script src="/galeria/js/jquery.fancybox.pack.js"></script>
-      <script src="/galeria/js/owl.carousel.min.js"></script>
-      <script src="/galeria/js/jquery.slitslider.js"></script>
-      <script src="/galeria/js/main2.js"></script>
-
-
+<!-- Core JavaScript Files -->
+{!!Html::script('/front/js/jquery.min.js')!!}
+{!!Html::script('/front/js/bootstrap.min.js')!!}
+{!!Html::script('/front/js/jquery.easing.min.js')!!}
+{!!Html::script('/front/js/jquery.scrollTo.js')!!}
+{!!Html::script('/front/js/wow.min.js')!!}
+<!-- Custom Theme JavaScript -->
+{!!Html::script('/front/js/custom2.js')!!}
+{!!Html::script('/front/contactform/contactform.js')!!}
+<!--   GALERIA -->
+<script src="/galeria/js/jquery-1.11.1.min.js"></script>
+<script src="/galeria/js/jquery.singlePageNav.min.js"></script>
+<script src="/galeria/js/jquery.fancybox.pack.js"></script>
+<script src="/galeria/js/owl.carousel.min.js"></script>
+<script src="/galeria/js/jquery.slitslider.js"></script>
+<script src="/galeria/js/main2.js"></script>
 </body>
 </html>

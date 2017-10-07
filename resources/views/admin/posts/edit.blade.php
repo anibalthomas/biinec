@@ -38,7 +38,7 @@
   @endif
     <form method="POST" action="{{ route('admin.posts.update', $post) }}">
       {{ csrf_field() }}  {{ method_field('PUT') }}
-    <div class="col-md-6">
+    <div class="col-md-8">
 
       <div class="box box-primary">
 
@@ -67,6 +67,7 @@
                     <div class="form-group {{ $errors->has('excerpt') ? 'has-error': ''}} ">
                       <label>Descripción</label>
                       <textarea name="excerpt"
+                                id="editor"
                                 class="form-control"
                                 placeholder="Ingresa una descripción">{{ old('excerpt', $post->excerpt)}}</textarea>
                       {!! $errors->first('excerpt', '<span class="help-block">:message</span>')!!}
@@ -139,7 +140,7 @@
       </div>
 
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="box box-primary">
         <div class="box-body">
 
@@ -206,43 +207,27 @@
 
   @include('partials.__messages')
 @endsection
-
 @push('styles')
-  {{-- mapa --}}
-  <link rel="stylesheet" href="/mapa/stylemapa.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/dropzone.css">
-  <!-- bootstrap datepicker -->
-  <link rel="stylesheet" href="/adminlte/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Select2 -->
+<link rel="stylesheet" href="/mapa/stylemapa.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/dropzone.css">
+<link rel="stylesheet" href="/adminlte/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 <link rel="stylesheet" href="/adminlte/select2/dist/css/select2.min.css">
 @endpush
 @push('scripts')
-      {{-- mapa --}}
-  <script src="/mapa/localiza2.js"></script>
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVZqDBRMRB0pIc6ygIY-a5-vwB1MoEu7A"></script>
-
-
+<script src="/mapa/localiza2.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVZqDBRMRB0pIc6ygIY-a5-vwB1MoEu7A"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.js"></script>
-
-  <!-- Select2 -->
 <script src="/adminlte/select2/dist/js/select2.full.min.js"></script>
-
-  <!-- bootstrap datepicker -->
-  <script src="/adminlte/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-      <script>
-            $('#datepicker').datepicker({
-              autoclose: true
-            })
-    $('.select2').select2();
-      </script>
-      <!-- CK Editor -->
-      {{-- <script src="/adminlte/ckeditor/ckeditor.js"></script> --}}
+<script src="/adminlte/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="/adminlte/ckeditor/ckeditor.js"></script>
 <script>
-
-// CKEDITOR.replace('editor');
+$('#datepicker').datepicker({
+  autoclose: true
+})
+$('.select2').select2();
+              // CKEDITOR  //
+CKEDITOR.replace('editor');
 // CKEDITOR.config.height = 328;   // la altura de editor de texto
-
 var myDropzone = new Dropzone('.dropzone', {
     url: '/admin/posts/{{ $post->url}}/photos',
     // acceptedFiles: 'image/*',
@@ -255,14 +240,10 @@ var myDropzone = new Dropzone('.dropzone', {
     dictDefaultMessage: 'Arrastra las fotos aqui para subirlas',
     // dictMaxFilesExceeded: 'Limite de imagenes excedido'
 });
-
 myDropzone.on('error', function(file, res){
   var msg = res.photo[0];
   $('.dz-error-message:last > span').text(msg);
 })
-
 Dropzone.autoDiscover = false;
-
 </script>
-
 @endpush
