@@ -68,7 +68,13 @@
 </nav>
 @yield('content')
 	<!-- /Section: contact -->
-	<footer>
+
+            @if (isset($post))
+            <footer>
+            @else
+            <footer style="width: 100%;bottom: 0;position: fixed;text-align: center;">
+            @endif
+
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-lg-12">

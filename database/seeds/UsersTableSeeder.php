@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
       $user->estado_id = "1";
       $user->ciudad_id = "1";
       $user->url = "www.dooded.com";
-      $user->avatar = "anibal.jpeg";
+      $user->avatar = "avatars/anibal.jpeg";
       $user->password = "123456";
       $user->created_at = Carbon::now()->format('Y-m-d H:i:s');
       $user->active = true;
@@ -41,10 +41,10 @@ class UsersTableSeeder extends Seeder
       $user->email = "tomas@gmail.com";
       $user->area_id = "1";
       $user->fechan = "2017-09-13 00:00:00";
-      $user->estado_id = "1";
-      $user->ciudad_id = "1";
+      $user->estado_id = "2";
+      $user->ciudad_id = "2";
       $user->url = "www.tomas.com";
-      // $user->avatar = "anibal.jpeg";
+      $user->avatar = "avatars/default.png";
       $user->password = "123456";
       $user->created_at = Carbon::now()->format('Y-m-d H:i:s');
       $user->active = true;

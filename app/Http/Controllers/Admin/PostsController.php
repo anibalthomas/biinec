@@ -7,6 +7,8 @@ use App\Post;
 use App\Category;
 use App\Area;
 use App\Lugar;
+use App\Author;
+use Illuminate\Support\Facades\Auth;    //para agregar la clase auth
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +17,8 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        // $posts = Post::all();
+        $posts = Auth::user()->posts;
         return view('admin.posts.index', compact('posts'));
     }
 
@@ -31,7 +34,11 @@ class PostsController extends Controller
         {
           $this->validate($request, ['title' => 'required|min:3']);
 
-          $post = Post::create($request->only('title'));
+          // $post = Post::create($request->only('title'));
+          $post = Post::create([
+            'title' => $request->get('title'),
+            'user_id' => auth()->id()
+          ]);
 
 
           return redirect()->route('admin.posts.edit', $post);
@@ -71,6 +78,8 @@ public function update(Post $post, Request $request)
   $post->lugar_id = $request->get('lugar');
   $post->ubicacion = $request->get('ubicacion');
   $post->save();
+
+
   $post->tags()->sync($request->get('tags'));
   return redirect()->route('admin.posts.edit', $post)->with('info','La publicación ha sido guardada');
 }

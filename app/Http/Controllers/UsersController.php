@@ -58,7 +58,7 @@ class UsersController extends Controller
 
       if ($request->hasFile('avatar'))
       {
-        $user->avatar = $request->file('avatar')->store('public');  // el nombre dentro de store, creara una carpeta con el nombre dentro de storage
+        $user->avatar = $request->file('avatar')->store('avatars','public');  // el nombre dentro de store, creara una carpeta con el nombre dentro de storage
       }
       $user->save();
 
@@ -114,7 +114,7 @@ class UsersController extends Controller
 
         if ($request->hasFile('avatar'))
         {
-          $user->avatar = $request->file('avatar')->store('public');  // el nombre dentro de store, creara una carpeta con el nombre dentro de storage
+          $user->avatar = $request->file('avatar')->store('avatars','public');  // el nombre dentro de store, creara una carpeta con el nombre dentro de storage
         }
 
         $user->update($request->only(

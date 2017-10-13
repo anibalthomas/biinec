@@ -23,7 +23,7 @@
       <div class="col-md-6">
 <br>
         {{-- <figure><img src="{{ $post->photos->first()->url }}" class="img-responsive" alt=""></figure> --}}
-        <figure><img src="/storage/{{ $post->photos->first()->url }}" class="img-responsive" alt=""></figure>
+        <figure><img src="/storage/{{ optional($post->photos->first())->url }}" class="img-responsive" alt=""></figure>
       </div>
         <div class="col-md-6">
           <h1 style="margin: 0px 0 10px;">{{ $post->title }}</h1>
@@ -75,7 +75,7 @@
                 </tr>
                 <tr>
                   <td>Descargar</td>
-                  <td><a href="/storage/{{$post->photos->first()->url}}" download="{{ $post->title }}"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
+                  <td><a href="/storage/{{optional($post->photos->first())->url}}" download="{{ $post->title }}"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                   <td>Compartir</td>
@@ -88,23 +88,23 @@
                             <table>
                               <tr>
                                 <td>Nombre:</td>
-                                <td>{{ Auth::user()->name }} {{ Auth::user()->apellidop }} {{ Auth::user()->apellidom }}</td>
+                                <td>{{ $post->owner->name}} {{ $post->owner->apellidop }} {{ $post->owner->pellidom }}</td>
                               </tr>
                               <tr>
                                 <td>Área o red de Adscripción:</td>
-                                <td>{{ Auth::user()->area->name }}</td>
+                                <td>{{ $post->owner->area->name }}</td>
                               </tr>
                               <tr>
                                 <td>Ciudad:</td>
-                                <td>{{ Auth::user()->ciudad->name }}, {{ Auth::user()->estado->name }}</td>
+                                <td>{{ $post->owner->ciudad->name }}, {{ $post->owner->estado->name }}</td>
                               </tr>
                               <tr>
                                 <td>Correo:</td>
-                                <td><a href="mailto:{{ Auth::user()->email }}?subject=feedback">{{ Auth::user()->email }}</a></td>
+                                <td><a href="mailto:{{ $post->owner->email }}?subject=feedback">{{ $post->owner->email }}</a></td>
                               </tr>
                               <tr>
                                 <td>URL</td>
-                                <td><a href="#">{{ Auth::user()->url }}</a></td>
+                                <td><a href="#">{{ $post->owner->url }}</a></td>
                               </tr>
 
                             </table>

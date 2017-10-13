@@ -136,13 +136,16 @@
                                             <h5 style="margin: 1px;">http://</h5>
                                           </div>
                                           <input id="datepicker" type="text"
-                                          class="form-control" name="url" value="{{ old('url') }}"  required autofocus>
+                                          class="form-control" name="url" value="{{ old('url') }}" >
                                         </div>
                                           @if ($errors->has('url'))
                                               <span class="help-block" style="padding-left: 265px;">
                                                   <strong>{{ $errors->first('url') }}</strong>
                                               </span>
                                           @endif
+                                          <div style="text-align:center;">
+                                            *Este campo no es obligatorio
+                                          </div>
                                     </div>
                                 </div>
 

@@ -88,6 +88,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class, 'assigned_roles');
     }
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
     public function hasRoles(array $roles)
     {
         foreach ($roles as $role) {

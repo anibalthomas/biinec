@@ -38,7 +38,8 @@ window.Laravel = {!! json_encode([
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><img src="/adminlte/img/2.png"  alt="logo"style="max-width: 83%;"></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>I</b>NECOL</span>
+      <span class="logo-lg"><img src="/front/img/logocol.png"
+        style="height: 50px;" class="responsive" alt=""></span>
     </a>
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">

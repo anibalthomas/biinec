@@ -50,6 +50,7 @@
               							{!! method_field('DELETE') !!}
 
               							<button class="btn btn-danger btn-xs" type="submit"
+                             onclick="return confirm('¿Estás seguro de querer eliminar este usuario?')"
                             {{-- onclick="return confirm('¿Estás seguro de querer eliminar este usuario?')" --}}
                             >Eliminar</button>
               						</form>

@@ -11,6 +11,8 @@ function initMap()
       var map = new google.maps.Map(document.getElementById('map'),
       {
         zoom: 13,
+
+        mapTypeId: google.maps.MapTypeId.HYBRID,
         center:new google.maps.LatLng(19.513385214765133,-96.94360024550781),
 
       });

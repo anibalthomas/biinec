@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->unsignedInteger('category_id')->nullable();
             $table->unsignedInteger('area_id')->nullable();
             $table->unsignedInteger('lugar_id')->nullable();
+            $table->unsignedInteger('user_id');
             $table->String('ubicacion')->nullable();
             $table->timestamps();
         });

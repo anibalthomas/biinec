@@ -48,7 +48,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ activeMenu('usuarios')}}"><a href="{{route('usuarios.index')}}"><i class="fa fa-users"></i>Listar</a></li>
+            <li class="{{ activeMenu('usuarios')}}"><a href="{{route('usuarios.index')}}">
+              <i class="fa fa-users"></i>Ver todos los usuarios</a></li>
             {{-- <li class="{{ activeMenu('registrar')}}"><a href="{{route('usuarios.create')}}"><i class="fa fa-user-plus"></i>Registrar</a></li> --}}
           </ul>
         </li>
