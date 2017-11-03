@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('header')
   <h1>
-    Tabla de Usuarios
-    <small>ddd</small>
+    Usuarios
+    {{-- <small>ddd</small> --}}
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-users"></i>Usuarios</a></li>
@@ -10,9 +10,13 @@
   </ol>
 @endsection
 @section('content')
-
-
-    <table  class="table table-striped table-bordered" >
+  <div class="box box-primary">
+    <div class="box-header">
+      <h3 class="box-title">Listado de Usuarios</h3>
+      {{-- <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>  Crear publicaciones</button> --}}
+    </div>
+<div class="box-body">
+    <table id="users-table"  class="table table-bordered table-striped" >
             <thead>
                 <tr>
                     <th>ID</th>
@@ -60,15 +64,27 @@
                    @endforeach
             </tbody>
         </table>
-
-
+</div>
+</div>
   @include('partials.__messages')
 @endsection
 @push('styles')
+  <link rel="stylesheet" href="/adminlte/datatables.net-bs/css/dataTables.bootstrap.min.css">
+
   {{-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"> --}}
 @endpush
 @push('scripts')
-  {{-- <script src="/bootstrap/js/datatables.js"></script>
+  <script src="/adminlte/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+  <script>
+    $(function () {
+      $('#users-table').DataTable();
+
+    });
+  </script>
+  {{--
+  <script src="/bootstrap/js/datatables.js"></script>
   <script>
   $(document).ready(function() {
 

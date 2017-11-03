@@ -25,6 +25,15 @@ class CreatePostsTable extends Migration
             $table->unsignedInteger('lugar_id')->nullable();
             $table->unsignedInteger('user_id');
             $table->String('ubicacion')->nullable();
+
+            $table->string('ownername')->nullable();
+            $table->string('ownerapaterno')->nullable();
+            $table->string('owneramaterno')->nullable();
+            $table->string('ownerarea')->nullable();
+            $table->string('ownerestado')->nullable();
+            $table->string('ownerciudad')->nullable();
+            $table->string('ownercorreo')->nullable();
+            $table->string('ownerurl')->nullable();
             $table->timestamps();
         });
     }

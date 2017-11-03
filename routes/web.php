@@ -31,6 +31,8 @@ Route::get('/ajax-town',function(){
 // Route::get('GetStates/{id}','StateController@GetStates');
 
 
+// Route::get('/storage', 'PostsController@click')->name('download.click');
+
 
 Route::get('activate/{token}','ActivationTokenController@activate')->name('activation');
 

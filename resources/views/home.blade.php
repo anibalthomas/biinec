@@ -12,9 +12,114 @@
 @section('content')
 
     <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-orange">
+            <div class="inner">
+              <h3>{{$npostsu}}</h3>
+
+              <p>Publicaciones</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-compose"></i>
+            </div>
+            {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
+          </div>
+        </div>
+              @if (auth()->user()->hasRoles(['admin']) )
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-aqua">
+                    <div class="inner">
+                      <h3>{{$nposts}}</h3>
+
+                      <p>Publicaciones Totales</p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-android-create"></i>
+                    </div>
+                    {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-xs-6">
+                  <!-- small box -->
+                  <div class="small-box bg-yellow">
+                    <div class="inner">
+                      <h3>{{$nusers}}</h3>
+
+                      <p>Usuarios Registrados</p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-person-add"></i>
+                    </div>
+                    {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
+                  </div>
+                </div>
+
+
+              </div>
+         <div class="row">
+           <div class="col-lg-3 col-xs-6">
+             <!-- small box -->
+             <div class="small-box bg-purple">
+               <div class="inner">
+
+
+                 <h3>{{$online}}</h3>
+
+                 <p>Usuarios en linea</p>
+               </div>
+               <div class="icon">
+                 <i class="ion ion-ios-people"></i>
+               </div>
+               {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
+             </div>
+           </div>
+
+           <div class="col-lg-3 col-xs-6">
+             <!-- small box -->
+             <div class="small-box bg-green">
+               <div class="inner">
+                 <h3>0</h3>
+
+                 <p>Visitantes</p>
+               </div>
+               <div class="icon">
+                 <i class="ion ion-android-globe"></i>
+               </div>
+               {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
+             </div>
+           </div>
+
+
+           <div class="col-lg-3 col-xs-6">
+             <!-- small box -->
+             <div class="small-box bg-red">
+               <div class="inner">
+                 <h3>{{$descargas}}</h3>
+
+                 <p>Imagenes descargadas</p>
+               </div>
+               <div class="icon">
+                 <i class="ion ion-ios-cloud-download"></i>
+               </div>
+               {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
+             </div>
+           </div>
+              @endif
+            </div>
+
+
+
+
+
           <div class="row">
 
-            <div class="col-md-6 col-md-offset-2">
+            <div class="col-lg-6 col-xs-6">
               <!-- Widget: user widget style 1 -->
               <div class="box box-widget widget-user-2">
                 <!-- Add the bg color to the header using any of the bg-* classes -->

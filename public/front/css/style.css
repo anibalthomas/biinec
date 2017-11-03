@@ -313,6 +313,7 @@ hr {
 	position:relative;
 	background: url(../img/bg1.jpg) no-repeat top center;
     background-size: cover;
+    background-size: 1349px 635px;    /*editado*/
     height: auto;
 }
 

@@ -17,10 +17,18 @@ class PostsController extends Controller
 {
     public function index()
     {
-        // $posts = Post::all();
-        $posts = Auth::user()->posts;
+        // if (auth()->user()->hasRoles(['admin']) ) {
+        //   $posts = Post::all();
+        // }
+        // else {
+          $posts = Auth::user()->posts;
+          // $posts = Post::where('user_id', auth()->id())->get();
+          // igual que arriba
+        // }
+
         return view('admin.posts.index', compact('posts'));
     }
+
 
     // public function create()
     // {
@@ -37,6 +45,16 @@ class PostsController extends Controller
           // $post = Post::create($request->only('title'));
           $post = Post::create([
             'title' => $request->get('title'),
+
+            'ownername' => Auth::user()->name,
+            'ownerapaterno' => Auth::user()->apellidop,
+            'owneramaterno' => Auth::user()->apellidom,
+            'ownerarea' => Auth::user()->area->name,
+            'ownerestado' => Auth::user()->estado->name,
+            'ownerciudad' => Auth::user()->ciudad->name,
+            'ownercorreo' => Auth::user()->email,
+            'ownerurl' => Auth::user()->url,
+
             'user_id' => auth()->id()
           ]);
 
@@ -46,6 +64,8 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
+       $this->authorize('view', $post);
+
         $categories = Category::all();
         $areas = Area::all();
         $lugares = Lugar::all();
@@ -59,6 +79,7 @@ class PostsController extends Controller
 // public function store(Request $request) {         return $request->all();   }
 public function update(Post $post, Request $request)
 {
+   $this->authorize('update', $post);
     $this->validate($request, [
       'title' => 'required',
       'ncientifico' => 'required',

@@ -5,14 +5,14 @@
 
 
       <!-- Menu toggle button -->
-              <li><a href="{{ route('mensajes' )}}">Enviar Mensaje</a></li>
+              {{-- <li><a href="{{ route('mensajes' )}}">Enviar Mensaje</a></li>
               <li><a href="{{ route('notifications.index')}}">Notificaciones
                 @if ($count = Auth::user()->unreadNotifications->count())
 
                   <span class="badge">{{ $count }}</span>
                 @endif
                   </a>
-              </li>
+              </li> --}}
     <!-- User Account Menu -->
     <li class="dropdown user user-menu">
       <!-- Menu Toggle Button -->

@@ -75,7 +75,14 @@
                 </tr>
                 <tr>
                   <td>Descargar</td>
-                  <td><a href="/storage/{{optional($post->photos->first())->url}}" download="{{ $post->title }}"><i class="fa fa-download fa-2x" aria-hidden="true"></i></a></td>
+                  <td><a
+                        href="/storage/{{$post->photos->first()->url}}"
+                        {{-- href="{{ route('download.click')}}/{{$post->photos->first()->url}}" --}}
+                        {{-- onclick="{{ route('download.show')}}" --}}
+                        download="{{ $post->title }}">
+                        <i class="fa fa-download fa-2x" aria-hidden="true"></i>
+                      </a>
+                  </td>
                 </tr>
                 <tr>
                   <td>Compartir</td>
@@ -88,23 +95,23 @@
                             <table>
                               <tr>
                                 <td>Nombre:</td>
-                                <td>{{ $post->owner->name}} {{ $post->owner->apellidop }} {{ $post->owner->pellidom }}</td>
+                                <td>{{ $post->ownername}} {{ $post->ownerapaterno }} {{ $post->owneramaterno }}</td>
                               </tr>
                               <tr>
                                 <td>Área o red de Adscripción:</td>
-                                <td>{{ $post->owner->area->name }}</td>
+                                <td>{{ $post->ownerarea }}</td>
                               </tr>
                               <tr>
                                 <td>Ciudad:</td>
-                                <td>{{ $post->owner->ciudad->name }}, {{ $post->owner->estado->name }}</td>
+                                <td>{{ $post->ownerciudad }}, {{ $post->ownerestado }}</td>
                               </tr>
                               <tr>
                                 <td>Correo:</td>
-                                <td><a href="mailto:{{ $post->owner->email }}?subject=feedback">{{ $post->owner->email }}</a></td>
+                                <td><a href="mailto:{{ $post->ownercorreo }}?subject=feedback">{{ $post->ownercorreo }}</a></td>
                               </tr>
                               <tr>
                                 <td>URL</td>
-                                <td><a href="#">{{ $post->owner->url }}</a></td>
+                                <td><a href="#">{{ $post->ownerurl }}</a></td>
                               </tr>
 
                             </table>

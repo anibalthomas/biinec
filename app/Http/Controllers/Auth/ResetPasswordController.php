@@ -47,7 +47,9 @@ class ResetPasswordController extends Controller
             'remember_token' => Str::random(60),
         ])->save();
 
-        $this->guard()->login($user);
+        $this->guard()->logout($user);
+
+        return redirect('login')->withInfo('Tu contraseña ha sido cambiada');
     }
 
 

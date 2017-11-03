@@ -23,12 +23,12 @@
         <tr>
           <th>ID</th>
           <th>Titulo</th>
-          <th>Estracto</th>
+          <th>Descripcion</th>
           <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
-          @foreach ($posts as $post)            
+          @foreach ($posts as $post)
             <tr>
               <td>{{ $post->id }}</td>
               <td>{{ $post->title }}</td>
@@ -100,38 +100,7 @@
 
 @endpush
 @push('scripts')
-  <script>
-       document.querySelector('#from1').addEventListener('submit', function(e) {
-           var form = this;
-           e.preventDefault();
-           swal({
-               title: "Are you sure?",
-               text: "You will not be able to recover this imaginary file!",
-               type: "warning",
-               showCancelButton: true,
-               confirmButtonColor: '#DD6B55',
-               confirmButtonText: 'Yes, I am sure!',
-               cancelButtonText: "No, cancel it!",
-               closeOnConfirm: false,
-               closeOnCancel: false
-           },
-           function(isConfirm) {
-               if (isConfirm) {
-                   swal({
-                       title: 'Shortlisted!',
-                       text: 'Candidates are successfully shortlisted!',
-                       type: 'success'
-                   }, function() {
-                       form.submit();
-                   });
 
-               } else {
-                   swal("Cancelled", "Your imaginary file is safe :)", "error");
-               }
-           });
-       });
-
-   </script>
   {{-- <script src="/sweetalert/sweetalert.min.js"></script>
   @include('sweet::alert') --}}
   <!-- Datatables -->

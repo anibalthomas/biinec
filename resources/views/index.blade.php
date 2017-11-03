@@ -143,11 +143,16 @@
 				<div class="wow fadeInUp" data-wow-delay="0.2s">
                 <div class="service-box">
 					<div class="service-icon">
-						<img src="/front/img/icons/service-icon-3.png" alt="" />
+						<img src="/front/img/icons/icons8-Nivel arriba-50.png" alt="" />
 					</div>
 					<div class="service-desc">
-						<h5>----------</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+						<h5>Motivación</h5>
+						<p>La ciencia y la tecnología tienen vital importancia para la sociedad, por lo que la difusión y divulgación de lo que ocurre en
+              los espacios científicos y tecnológicos, debemos tener mayor cobertura dentro de las agendas de los medios de comunicación
+              tradicionales y electrónicos.<br>
+              Por lo anterior es importante que la trasmisión de conocimiento científico sea socializada a través de herramientas de nueva generación,
+               conocimientos y técnicas que por su naturaleza, muchas veces son inaccesibles para la sociedad.
+             </p>
 					</div>
                 </div>
 				</div>
@@ -156,11 +161,16 @@
 				<div class="wow fadeInRight" data-wow-delay="0.2s">
                 <div class="service-box">
 					<div class="service-icon">
-						<img src="/front/img/icons/service-icon-4.png" alt="" />
+						<img src="/front/img/icons/icons8-Objetivo-50.png" alt="" />
 					</div>
 					<div class="service-desc">
-						<h5>------------</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
+						<h5>Meta</h5>
+						<p>En el instituto de Ecología tiene la necesidad de crear una galería institucional de imágenes que permita a la comunidad INECOL,
+              difundir y divulgar por medio de imágenes de alta calidad para la realización de diversos trabajos como presentaciones,
+              exposiciones o carteles para congresos.<br>
+              Este banco de imágenes pretende mostrar el panorama científico del día a día, capturando imágenes de plantas, hongos, animales,
+              insectos, instalaciones, proyectos, texturas y formas que podemos observar en nuestro entorno natural.
+            </p>
 					</div>
                 </div>
 				</div>

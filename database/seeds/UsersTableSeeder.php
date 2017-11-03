@@ -50,6 +50,24 @@ class UsersTableSeeder extends Seeder
       $user->active = true;
       $user->save();
 
+      DB::table('assigned_roles')->truncate();
+      $user = new User;
+      $user->name = "Guillermo";
+      $user->apellidop = "López";
+      $user->apellidom = "Escalera Argueta";
+      $user->genero = "1";
+      $user->email = "guillermo.lopez@inecol.mx";
+      $user->area_id = "1";
+      $user->fechan = "2017-09-13 00:00:00";
+      $user->estado_id = "2";
+      $user->ciudad_id = "2";
+      $user->url = "www.guillermo.com";
+      $user->avatar = "avatars/default.png";
+      $user->password = "123456";
+      $user->created_at = Carbon::now()->format('Y-m-d H:i:s');
+      $user->active = true;
+      $user->save();
+
 
       DB::table('assigned_roles')->insert([
             'id' => '1',
@@ -60,6 +78,12 @@ class UsersTableSeeder extends Seeder
       DB::table('assigned_roles')->insert([
             'id' => '2',
             'user_id' => '2',
+            'role_id' => '1',
+      ]);
+
+      DB::table('assigned_roles')->insert([
+            'id' => '3',
+            'user_id' => '3',
             'role_id' => '1',
       ]);
 

@@ -217,12 +217,6 @@
           </div>
           {!! $errors->first('roles', '<span class=error>:message</span>') !!}
         </div>
-
-
-
               <hr>
-
-
           @endif
-
     @endif

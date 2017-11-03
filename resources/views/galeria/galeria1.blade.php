@@ -24,7 +24,7 @@
 			<li class="portfolio-item">
 
 				{{-- <img style="height: 284.967px;"src="{{ $post->photos->first()->url }}" class="img-responsive" alt="{{$post->excerpt}}"> --}}
-				<img style="height: 284.967px;"src="/storage/{{ optional($post->photos->first())->url }}" class="img-responsive" alt="{{$post->excerpt}}">
+				<img style="height: 284.967px;width: 373px;"src="/storage/{{ optional($post->photos->first())->url }}" class="img-responsive" alt="{{$post->ncientifico}}">
 
 				<figcaption class="mask">
 					<h3>{{$post->title}}</h3>

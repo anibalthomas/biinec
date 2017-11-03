@@ -7,6 +7,7 @@ use App\ActivationToken;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\ResetPasswordNotification;
+use Illuminate\Support\Facades\Cache;    //para agregar la clase Cache
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -34,8 +35,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token'
     ];
-
-
+    public function isOnline()
+    {
+      return Cache::has('user-online-'.$this->id);
+    }
 
     public function activate($token)
     {
