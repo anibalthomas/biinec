@@ -100,10 +100,10 @@ class UsersTableSeeder extends Seeder
       //   'password' => bcrypt('123456'),
       // 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
       // ]);
-      //
 
 
-      factory(App\User::class, 30)->create();
+
+      // factory(App\User::class, 30)->create();
 
 
 
