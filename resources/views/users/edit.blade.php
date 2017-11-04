@@ -26,7 +26,7 @@
           <input class="btn btn-primary" type="submit" value="Editar">
         </form>
         {{-- <button type="button" href="{{ route('password')}}" class="btn btn-primary" name="button">Cambiar password</button> --}}
-        <a href="{{ route('password')}}">Cambiar mi password</a>
+        {{-- <a href="{{ route('password')}}">Cambiar mi password</a> --}}
 
 
         </div>
